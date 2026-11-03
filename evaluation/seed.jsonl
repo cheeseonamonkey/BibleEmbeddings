@@ -1,0 +1,30 @@
+{"claim": "You should answer a fool according to his folly.", "reference": "Proverbs 26:5", "label": "entailment"}
+{"claim": "You should answer a fool according to his folly.", "reference": "Proverbs 26:4", "label": "contradiction"}
+{"claim": "You should not answer a fool according to his folly.", "reference": "Proverbs 26:4", "label": "entailment"}
+{"claim": "You should not answer a fool according to his folly.", "reference": "Proverbs 26:5", "label": "contradiction"}
+{"claim": "The passage contains instructions both to answer and not answer a fool.", "reference": "Proverbs 26:4\u20135", "label": "entailment"}
+{"claim": "You should always answer a fool.", "reference": "Proverbs 26:4\u20135", "label": "neutral"}
+{"claim": "You should love your enemies.", "reference": "Matthew 5:44", "label": "entailment"}
+{"claim": "You should hate your enemies.", "reference": "Matthew 5:44", "label": "contradiction"}
+{"claim": "You should honor your parents.", "reference": "Exodus 20:12", "label": "entailment"}
+{"claim": "You should dishonor your parents.", "reference": "Exodus 20:12", "label": "contradiction"}
+{"claim": "People should not lie to each other.", "reference": "Colossians 3:9", "label": "entailment"}
+{"claim": "People should lie to each other.", "reference": "Colossians 3:9", "label": "contradiction"}
+{"claim": "The love of money is the root of all evil.", "reference": "1 Timothy 6:10", "label": "entailment"}
+{"claim": "The love of money is completely harmless.", "reference": "1 Timothy 6:10", "label": "contradiction"}
+{"claim": "Money answers all things.", "reference": "Ecclesiastes 10:19", "label": "entailment"}
+{"claim": "Faith without works is dead.", "reference": "James 2:17", "label": "entailment"}
+{"claim": "Faith without works is alive and sufficient.", "reference": "James 2:17", "label": "contradiction"}
+{"claim": "No one can serve two masters.", "reference": "Matthew 6:24", "label": "entailment"}
+{"claim": "Serving two masters is easy and encouraged.", "reference": "Matthew 6:24", "label": "contradiction"}
+{"claim": "God created beasts and cattle.", "reference": "Genesis 1:25", "label": "entailment"}
+{"claim": "God did not create beasts or cattle.", "reference": "Genesis 1:25", "label": "contradiction"}
+{"claim": "George Bush orchestrated the attacks on September 11, 2001.", "reference": "Proverbs 18:13", "label": "neutral"}
+{"claim": "George Bush did not orchestrate the attacks on September 11, 2001.", "reference": "Proverbs 18:13", "label": "neutral"}
+{"claim": "Same-sex civil marriage should be legally recognized.", "reference": "Galatians 3:28", "label": "neutral"}
+{"claim": "Same-sex civil marriage should be prohibited by civil law.", "reference": "Matthew 19:5", "label": "neutral"}
+{"claim": "This passage describes male-female marriage.", "reference": "Matthew 19:4\u20135", "label": "entailment"}
+{"claim": "God prefers cats to dogs.", "reference": "Genesis 1:25", "label": "neutral"}
+{"claim": "The Earth is flat.", "reference": "Isaiah 40:22", "label": "neutral"}
+{"claim": "The moon is made of cheese.", "reference": "Ecclesiastes 10:19", "label": "neutral"}
+{"claim": "Smartphones are sinful.", "reference": "James 2:17", "label": "neutral"}

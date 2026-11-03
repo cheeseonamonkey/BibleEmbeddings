@@ -23,7 +23,8 @@ def source(tmp_path):
 
 def test_windows_do_not_cross_chapters(source):
     passages = load_passages(source)
-    assert len(passages) == 6 + 4 + 2 + 1
+    assert len(passages) == 6 + 5 + 4 + 2 + 1
+    assert any(p.reference == "Genesis 1:1–2" for p in passages)
     assert any(p.reference == "Genesis 1:1–3" for p in passages)
     assert any(p.reference == "Genesis 1:2–6" for p in passages)
     assert not any("2:" in p.reference and "–" in p.reference for p in passages)

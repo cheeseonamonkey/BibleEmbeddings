@@ -26,7 +26,7 @@ def corpus_sha256(path: str | Path) -> str:
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def load_passages(path: str | Path, widths: tuple[int, ...] = (1, 3, 5),
+def load_passages(path: str | Path, widths: tuple[int, ...] = (1, 2, 3, 5),
                   context_radius: int = 2) -> list[Passage]:
     """Only contiguous passages within a chapter; no cross-chapter overlap."""
     if context_radius < 0 or not widths or any(w < 1 for w in widths):

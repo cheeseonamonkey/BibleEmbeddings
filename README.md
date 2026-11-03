@@ -7,7 +7,7 @@ textual evidence. This is not a fact-checker or theological truth detector.
 ## Architecture
 
 1. **Hybrid retrieval:** BM25 + optional MiniLM embeddings; reciprocal rank fusion.
-2. **Multi-verse passages:** overlapping 1-, 3- and 5-verse windows. Preserve book,
+2. **Multi-verse passages:** overlapping 1-, 2-, 3- and 5-verse windows. Preserve book,
    chapter and verse ranges; never merge chapters. Overlapping retrieval hits are
    deduplicated to encourage independent evidence.
 3. **Specialized judge:** fine-tuned ModernBERT-base (~149M parameters). NLI labels
@@ -50,6 +50,10 @@ kaggle kernels status ffatty/verse-lawyer-modernbert-149m-nli-baseline
 The notebook fine-tunes ModernBERT on a seeded subset of MultiNLI (6,000 train /
 1,000 held-out evaluation pairs), reporting macro-F1 and accuracy, and exports
 the best checkpoint. **This is a generic NLI baseline, not biblical adaptation.**
+
+We include 30 provisional Bible-specific labeled cases in `evaluation/seed.jsonl`.
+Use `python evaluation/evaluate.py --data data/en_kjv.json --model MODEL_PATH`
+to smoke-test a trained checkpoint; the tiny seed is not a scientific benchmark.
 
 Next: curate 200–500 gold biblical evidence pairs, including counterfactuals,
 paraphrases, translation-sensitive examples, and misleading isolated verses.
