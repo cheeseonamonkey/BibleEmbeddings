@@ -1,0 +1,495 @@
+[
+  {
+    "claim": "Answer a fool according to his folly.",
+    "retrieval_hits": 14,
+    "candidate_references": [
+      "Proverbs 26:4\u20135",
+      "Proverbs 26:3\u20135",
+      "Proverbs 26:4\u20136",
+      "Proverbs 26:5",
+      "Proverbs 26:4",
+      "Proverbs 26:4\u20138",
+      "Proverbs 26:1\u20135",
+      "Proverbs 26:3\u20137",
+      "Proverbs 26:2\u20136",
+      "Proverbs 26:5\u20136",
+      "Proverbs 26:3\u20134",
+      "Proverbs 26:5\u20137",
+      "Proverbs 26:2\u20134",
+      "Proverbs 26:5\u20139"
+    ],
+    "for": [
+      {
+        "reference": "Proverbs 26:2\u20134",
+        "score": 0.4491,
+        "passage": "As the bird by wandering, as the swallow by flying, so the curse causeless shall not come. A whip for the horse, a bridle for the ass, and a rod for the fool\u2019s back. Answer not a fool according to his folly, lest thou also be like unto him."
+      }
+    ],
+    "against": [
+      {
+        "reference": "Proverbs 26:4",
+        "score": 0.7683,
+        "passage": "Answer not a fool according to his folly, lest thou also be like unto him."
+      },
+      {
+        "reference": "Proverbs 26:5",
+        "score": 0.7575,
+        "passage": "Answer a fool according to his folly, lest he be wise in his own conceit."
+      }
+    ],
+    "runtime_seconds": 7.83
+  },
+  {
+    "claim": "Never feed an enemy who is hungry.",
+    "retrieval_hits": 14,
+    "candidate_references": [
+      "Proverbs 27:6\u20137",
+      "Proverbs 27:5\u20137",
+      "Proverbs 27:4\u20138",
+      "Proverbs 27:3\u20137",
+      "Proverbs 27:6\u20138",
+      "Proverbs 25:20\u201321",
+      "Proverbs 25:21",
+      "Proverbs 25:19\u201321",
+      "Proverbs 25:21\u201323",
+      "Proverbs 27:5\u20139",
+      "Proverbs 25:20\u201322",
+      "Romans 12:20",
+      "Proverbs 25:21\u201322",
+      "Proverbs 27:7"
+    ],
+    "for": [],
+    "against": [
+      {
+        "reference": "Proverbs 25:21",
+        "score": 0.9864,
+        "passage": "If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink:"
+      },
+      {
+        "reference": "Romans 12:20",
+        "score": 0.9373,
+        "passage": "Therefore if thine enemy hunger, feed him; if he thirst, give him drink: for in so doing thou shalt heap coals of fire on his head."
+      },
+      {
+        "reference": "Proverbs 27:6\u20137",
+        "score": 0.7824,
+        "passage": "Faithful are the wounds of a friend; but the kisses of an enemy are deceitful. The full soul loatheth an honeycomb; but to the hungry soul every bitter thing is sweet."
+      }
+    ],
+    "runtime_seconds": 7.75
+  },
+  {
+    "claim": "You should always love your enemies.",
+    "retrieval_hits": 14,
+    "candidate_references": [
+      "Luke 6:27",
+      "Matthew 5:44",
+      "Luke 6:27\u201328",
+      "Matthew 5:43\u201344",
+      "1 Thessalonians 1:2\u20134",
+      "Colossians 1:3\u20134",
+      "1 Thessalonians 1:2\u20133",
+      "Luke 6:31\u201335",
+      "Luke 6:26\u201327",
+      "Matthew 5:44\u201346",
+      "Matthew 5:42\u201344",
+      "Matthew 5:43\u201347",
+      "Luke 6:26\u201328",
+      "Matthew 5:44\u201348"
+    ],
+    "for": [],
+    "against": [
+      {
+        "reference": "Matthew 5:43\u201347",
+        "score": 0.8444,
+        "passage": "Ye have heard that it hath been said, Thou shalt love thy neighbour, and hate thine enemy. But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and pe"
+      }
+    ],
+    "runtime_seconds": 9.81
+  },
+  {
+    "claim": "A wealthy man easily enters the kingdom of God.",
+    "retrieval_hits": 14,
+    "candidate_references": [
+      "Luke 17:20\u201322",
+      "Hebrews 12:1\u20132",
+      "Matthew 19:23\u201324",
+      "Luke 13:18\u201320",
+      "Hebrews 12:1",
+      "Mark 10:23\u201325",
+      "Mark 10:25",
+      "John 3:5",
+      "Mark 4:26",
+      "John 3:3\u20135",
+      "Mark 10:24\u201325",
+      "Luke 23:51\u201352",
+      "Luke 17:20\u201321",
+      "Matthew 19:22\u201324"
+    ],
+    "for": [
+      {
+        "reference": "Mark 10:25",
+        "score": 0.5638,
+        "passage": "It is easier for a camel to go through the eye of a needle, than for a rich man to enter into the kingdom of God."
+      }
+    ],
+    "against": [
+      {
+        "reference": "Mark 10:23\u201325",
+        "score": 0.5911,
+        "passage": "And Jesus looked round about, and saith unto his disciples, How hardly shall they that have riches enter into the kingdom of God! And the disciples were astonished at his words. But Jesus answereth again, and saith unto them, Children, how "
+      },
+      {
+        "reference": "Matthew 19:23\u201324",
+        "score": 0.5164,
+        "passage": "Then said Jesus unto his disciples, Verily I say unto you, That a rich man shall hardly enter into the kingdom of heaven. And again I say unto you, It is easier for a camel to go through the eye of a needle, than for a rich man to enter int"
+      }
+    ],
+    "runtime_seconds": 7.84
+  },
+  {
+    "claim": "Money answers all things.",
+    "retrieval_hits": 14,
+    "candidate_references": [
+      "Luke 2:47",
+      "Job 21:34",
+      "Job 34:36",
+      "2 Kings 12:4",
+      "Ecclesiastes 10:19",
+      "2 Kings 12:3\u20134",
+      "Job 34:35\u201336",
+      "Luke 2:46\u201347",
+      "2 Kings 12:4\u20135",
+      "Luke 2:47\u201348",
+      "2 Kings 12:2\u20134",
+      "Job 21:33\u201334",
+      "Job 34:36\u201337",
+      "2 Kings 12:3\u20135"
+    ],
+    "for": [
+      {
+        "reference": "2 Kings 12:3\u20134",
+        "score": 0.5401,
+        "passage": "But the high places were not taken away: the people still sacrificed and burnt incense in the high places. And Jehoash said to the priests, All the money of the dedicated things that is brought into the house of the LORD , even the money of"
+      }
+    ],
+    "against": [
+      {
+        "reference": "Ecclesiastes 10:19",
+        "score": 0.5148,
+        "passage": "A feast is made for laughter, and wine maketh merry: but money answereth all things ."
+      },
+      {
+        "reference": "Job 21:34",
+        "score": 0.4942,
+        "passage": "How then comfort ye me in vain, seeing in your answers there remaineth falsehood?"
+      }
+    ],
+    "runtime_seconds": 8.48
+  },
+  {
+    "claim": "There is a time to dance.",
+    "retrieval_hits": 14,
+    "candidate_references": [
+      "Ecclesiastes 3:4",
+      "Ecclesiastes 3:3\u20134",
+      "Ecclesiastes 3:4\u20135",
+      "Ecclesiastes 3:2\u20134",
+      "Ecclesiastes 3:1\u20135",
+      "Ecclesiastes 3:4\u20136",
+      "Ecclesiastes 3:3\u20135",
+      "Ecclesiastes 3:2\u20136",
+      "Ecclesiastes 3:4\u20138",
+      "Ecclesiastes 3:3\u20137",
+      "Isaiah 13:21\u201322",
+      "Isaiah 13:20\u201322",
+      "Ecclesiastes 3:1\u20133",
+      "Ecclesiastes 3:1\u20132"
+    ],
+    "for": [
+      {
+        "reference": "Ecclesiastes 3:1\u20132",
+        "score": 0.8839,
+        "passage": "To every thing there is a season, and a time to every purpose under the heaven: A time to be born, and a time to die; a time to plant, and a time to pluck up that which is planted;"
+      },
+      {
+        "reference": "Isaiah 13:21\u201322",
+        "score": 0.8381,
+        "passage": "But wild beasts of the desert shall lie there; and their houses shall be full of doleful creatures; and owls shall dwell there, and satyrs shall dance there. And the wild beasts of the islands shall cry in their desolate houses, and dragons"
+      },
+      {
+        "reference": "Ecclesiastes 3:4",
+        "score": 0.6364,
+        "passage": "A time to weep, and a time to laugh; a time to mourn, and a time to dance;"
+      }
+    ],
+    "against": [
+      {
+        "reference": "Ecclesiastes 3:3\u20135",
+        "score": 0.6367,
+        "passage": "A time to kill, and a time to heal; a time to break down, and a time to build up; A time to weep, and a time to laugh; a time to mourn, and a time to dance; A time to cast away stones, and a time to gather stones together; a time to embrace"
+      }
+    ],
+    "runtime_seconds": 7.63
+  },
+  {
+    "claim": "Long hair on a man is a shame.",
+    "retrieval_hits": 14,
+    "candidate_references": [
+      "1 Corinthians 11:14\u201315",
+      "1 Corinthians 11:14",
+      "1 Corinthians 11:13\u201315",
+      "1 Corinthians 11:14\u201316",
+      "1 Corinthians 11:13\u201314",
+      "1 Corinthians 11:11\u201315",
+      "1 Corinthians 11:12\u201316",
+      "1 Corinthians 11:13\u201317",
+      "1 Corinthians 11:12\u201314",
+      "1 Corinthians 11:14\u201318",
+      "1 Corinthians 11:10\u201314",
+      "1 Corinthians 11:15",
+      "1 Corinthians 11:15\u201316",
+      "1 Corinthians 11:15\u201317"
+    ],
+    "for": [
+      {
+        "reference": "1 Corinthians 11:10\u201314",
+        "score": 0.5603,
+        "passage": "For this cause ought the woman to have power on her head because of the angels. Nevertheless neither is the man without the woman, neither the woman without the man, in the Lord. For as the woman is of the man, even so is the man also by th"
+      },
+      {
+        "reference": "1 Corinthians 11:15",
+        "score": 0.4996,
+        "passage": "But if a woman have long hair, it is a glory to her: for her hair is given her for a covering."
+      }
+    ],
+    "against": [],
+    "runtime_seconds": 7.76
+  },
+  {
+    "claim": "The Sabbath was made for man.",
+    "retrieval_hits": 14,
+    "candidate_references": [
+      "Mark 2:27\u201328",
+      "Mark 2:27",
+      "Mark 2:26\u201328",
+      "John 5:9\u201310",
+      "John 5:9",
+      "John 5:9\u201311",
+      "Mark 2:26\u201327",
+      "John 5:8\u201310",
+      "Mark 2:24\u201328",
+      "John 7:23",
+      "John 7:22\u201323",
+      "John 5:8\u20139",
+      "John 5:8\u201312",
+      "John 5:7\u201311"
+    ],
+    "for": [
+      {
+        "reference": "John 5:9",
+        "score": 0.9422,
+        "passage": "And immediately the man was made whole, and took up his bed, and walked: and on the same day was the sabbath."
+      },
+      {
+        "reference": "John 7:23",
+        "score": 0.63,
+        "passage": "If a man on the sabbath day receive circumcision, that the law of Moses should not be broken; are ye angry at me, because I have made a man every whit whole on the sabbath day?"
+      },
+      {
+        "reference": "Mark 2:26\u201327",
+        "score": 0.5898,
+        "passage": "How he went into the house of God in the days of Abiathar the high priest, and did eat the shewbread, which is not lawful to eat but for the priests, and gave also to them which were with him? And he said unto them, The sabbath was made for"
+      }
+    ],
+    "against": [
+      {
+        "reference": "John 5:9\u201311",
+        "score": 0.6465,
+        "passage": "And immediately the man was made whole, and took up his bed, and walked: and on the same day was the sabbath. The Jews therefore said unto him that was cured, It is the sabbath day: it is not lawful for thee to carry thy bed. He answered th"
+      }
+    ],
+    "runtime_seconds": 9.03
+  },
+  {
+    "claim": "It is better to give than receive.",
+    "retrieval_hits": 14,
+    "candidate_references": [
+      "Proverbs 8:10\u201311",
+      "Genesis 29:19",
+      "Proverbs 8:9\u201311",
+      "Proverbs 8:10\u201312",
+      "Psalms 118:8\u20139",
+      "Ecclesiastes 7:1\u20133",
+      "Ecclesiastes 7:1\u20135",
+      "Ecclesiastes 7:2\u20133",
+      "Ecclesiastes 7:1\u20132",
+      "Genesis 29:18\u201319",
+      "Proverbs 16:16",
+      "Psalms 118:8\u201310",
+      "Genesis 29:19\u201320",
+      "Acts 20:35"
+    ],
+    "for": [
+      {
+        "reference": "Genesis 29:19",
+        "score": 0.9587,
+        "passage": "And Laban said, It is better that I give her to thee, than that I should give her to another man: abide with me."
+      },
+      {
+        "reference": "Psalms 118:8\u20139",
+        "score": 0.7254,
+        "passage": "It is better to trust in the LORD than to put confidence in man. It is better to trust in the LORD than to put confidence in princes."
+      },
+      {
+        "reference": "Ecclesiastes 7:2\u20133",
+        "score": 0.6796,
+        "passage": "It is better to go to the house of mourning, than to go to the house of feasting: for that is the end of all men; and the living will lay it to his heart. Sorrow is better than laughter: for by the sadness of the countenance the heart is ma"
+      }
+    ],
+    "against": [
+      {
+        "reference": "Psalms 118:8\u201310",
+        "score": 0.5957,
+        "passage": "It is better to trust in the LORD than to put confidence in man. It is better to trust in the LORD than to put confidence in princes. All nations compassed me about: but in the name of the LORD will I destroy them."
+      },
+      {
+        "reference": "Proverbs 8:9\u201311",
+        "score": 0.4193,
+        "passage": "They are all plain to him that understandeth, and right to them that find knowledge. Receive my instruction, and not silver; and knowledge rather than choice gold. For wisdom is better than rubies; and all the things that may be desired are"
+      }
+    ],
+    "runtime_seconds": 7.13
+  },
+  {
+    "claim": "Every donkey can talk.",
+    "retrieval_hits": 14,
+    "candidate_references": [
+      "Job 15:3",
+      "Job 15:3\u20134",
+      "Job 15:2\u20133",
+      "Daniel 10:17",
+      "Ecclesiastes 10:13\u201315",
+      "Job 15:1\u20133",
+      "Job 15:3\u20135",
+      "Job 15:2\u20134",
+      "Ecclesiastes 10:13\u201314",
+      "Daniel 10:17\u201318",
+      "Job 15:1\u20135",
+      "Ecclesiastes 10:11\u201315",
+      "Ecclesiastes 10:12\u201314",
+      "Ecclesiastes 10:12\u201316"
+    ],
+    "for": [],
+    "against": [
+      {
+        "reference": "Job 15:1\u20135",
+        "score": 0.617,
+        "passage": "Then answered Eliphaz the Temanite, and said, Should a wise man utter vain knowledge, and fill his belly with the east wind? Should he reason with unprofitable talk? or with speeches wherewith he can do no good? Yea, thou castest off fear, "
+      }
+    ],
+    "runtime_seconds": 8.47
+  },
+  {
+    "claim": "God prefers cats over dogs.",
+    "retrieval_hits": 14,
+    "candidate_references": [
+      "Jeremiah 15:3",
+      "Matthew 15:26\u201327",
+      "1 Kings 21:23\u201324",
+      "Philippians 3:2",
+      "1 Kings 21:19",
+      "Matthew 15:25\u201327",
+      "Mark 7:27\u201328",
+      "Isaiah 56:10\u201311",
+      "Psalms 68:23\u201324",
+      "Philippians 3:2\u20133",
+      "1 Kings 21:23",
+      "Matthew 15:27",
+      "Revelation 22:15",
+      "Psalms 22:16"
+    ],
+    "for": [],
+    "against": [
+      {
+        "reference": "Psalms 22:16",
+        "score": 0.5935,
+        "passage": "For dogs have compassed me: the assembly of the wicked have inclosed me: they pierced my hands and my feet."
+      },
+      {
+        "reference": "Philippians 3:2\u20133",
+        "score": 0.45,
+        "passage": "Beware of dogs, beware of evil workers, beware of the concision. For we are the circumcision, which worship God in the spirit, and rejoice in Christ Jesus, and have no confidence in the flesh."
+      }
+    ],
+    "runtime_seconds": 6.94
+  },
+  {
+    "claim": "The Bible predicted TikTok.",
+    "retrieval_hits": 14,
+    "candidate_references": [
+      "Numbers 3:23\u201327",
+      "Numbers 3:25\u201327",
+      "Isaiah 3:19\u201323",
+      "Numbers 3:24\u201328",
+      "Numbers 3:25\u201329",
+      "Numbers 3:24\u201326",
+      "Matthew 13:38\u201339",
+      "Numbers 3:23\u201325",
+      "Daniel 3:2\u20133",
+      "Numbers 3:26\u201330",
+      "Ezra 4:9",
+      "Numbers 3:25\u201326",
+      "Numbers 3:27\u201331",
+      "Numbers 3:29\u201333"
+    ],
+    "for": [
+      {
+        "reference": "Ezra 4:9",
+        "score": 0.5934,
+        "passage": "Then wrote Rehum the chancellor, and Shimshai the scribe, and the rest of their companions; the Dinaites, the Apharsathchites, the Tarpelites, the Apharsites, the Archevites, the Babylonians, the Susanchites, the Dehavites, and the Elamites"
+      },
+      {
+        "reference": "Numbers 3:29\u201333",
+        "score": 0.586,
+        "passage": "The families of the sons of Kohath shall pitch on the side of the tabernacle southward. And the chief of the house of the father of the families of the Kohathites shall be Elizaphan the son of Uzziel. And their charge shall be the ark, and "
+      },
+      {
+        "reference": "Numbers 3:24\u201328",
+        "score": 0.4174,
+        "passage": "And the chief of the house of the father of the Gershonites shall be Eliasaph the son of Lael. And the charge of the sons of Gershon in the tabernacle of the congregation shall be the tabernacle, and the tent, the covering thereof, and the "
+      }
+    ],
+    "against": [],
+    "runtime_seconds": 12.65
+  },
+  {
+    "claim": "Bush did 9/11.",
+    "retrieval_hits": 14,
+    "candidate_references": [
+      "Exodus 3:2\u20133",
+      "Exodus 3:2",
+      "Exodus 3:2\u20134",
+      "Exodus 3:1\u20133",
+      "Acts 7:35",
+      "Exodus 3:1\u20132",
+      "Exodus 3:1\u20135",
+      "Exodus 3:2\u20136",
+      "Exodus 3:3\u20134",
+      "Exodus 3:3",
+      "Luke 6:44",
+      "Exodus 3:3\u20135",
+      "Acts 7:35\u201336",
+      "Acts 7:30"
+    ],
+    "for": [
+      {
+        "reference": "Exodus 3:2\u20134",
+        "score": 0.4216,
+        "passage": "And the angel of the LORD appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed. And Moses said, I will now turn aside, and see this great sight"
+      }
+    ],
+    "against": [],
+    "runtime_seconds": 12.05
+  }
+]

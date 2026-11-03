@@ -1,0 +1,266 @@
+[
+  {
+    "claim": "The moon is made of cheese.",
+    "reference": "Ecclesiastes 10:19",
+    "expected": "neutral",
+    "predicted": "neutral",
+    "scores": {
+      "entailment": 0.0032,
+      "neutral": 0.504,
+      "contradiction": 0.4928
+    }
+  },
+  {
+    "claim": "Bush did 9/11.",
+    "reference": "Proverbs 18:13",
+    "expected": "neutral",
+    "predicted": "neutral",
+    "scores": {
+      "entailment": 0.001,
+      "neutral": 0.9905,
+      "contradiction": 0.0086
+    }
+  },
+  {
+    "claim": "God prefers cats over dogs.",
+    "reference": "Genesis 1:25",
+    "expected": "neutral",
+    "predicted": "neutral",
+    "scores": {
+      "entailment": 0.0033,
+      "neutral": 0.9761,
+      "contradiction": 0.0206
+    }
+  },
+  {
+    "claim": "The Earth is flat.",
+    "reference": "Isaiah 40:22",
+    "expected": "neutral",
+    "predicted": "contradiction",
+    "scores": {
+      "entailment": 0.0008,
+      "neutral": 0.0105,
+      "contradiction": 0.9887
+    }
+  },
+  {
+    "claim": "The Bible predicted TikTok.",
+    "reference": "Ecclesiastes 1:9",
+    "expected": "neutral",
+    "predicted": "neutral",
+    "scores": {
+      "entailment": 0.0115,
+      "neutral": 0.9753,
+      "contradiction": 0.0132
+    }
+  },
+  {
+    "claim": "God hates Mondays.",
+    "reference": "Genesis 1:5",
+    "expected": "neutral",
+    "predicted": "neutral",
+    "scores": {
+      "entailment": 0.0038,
+      "neutral": 0.9,
+      "contradiction": 0.0962
+    }
+  },
+  {
+    "claim": "An ass spoke to Balaam.",
+    "reference": "Numbers 22:28",
+    "expected": "entailment",
+    "predicted": "entailment",
+    "scores": {
+      "entailment": 0.9997,
+      "neutral": 0.0001,
+      "contradiction": 0.0002
+    }
+  },
+  {
+    "claim": "All donkeys speak English.",
+    "reference": "Numbers 22:28",
+    "expected": "neutral",
+    "predicted": "neutral",
+    "scores": {
+      "entailment": 0.0005,
+      "neutral": 0.9872,
+      "contradiction": 0.0124
+    }
+  },
+  {
+    "claim": "It is sinful to be bald.",
+    "reference": "2 Kings 2:23",
+    "expected": "neutral",
+    "predicted": "neutral",
+    "scores": {
+      "entailment": 0.0487,
+      "neutral": 0.8804,
+      "contradiction": 0.071
+    }
+  },
+  {
+    "claim": "Feed a hungry enemy.",
+    "reference": "Proverbs 25:21",
+    "expected": "entailment",
+    "predicted": "entailment",
+    "scores": {
+      "entailment": 0.9983,
+      "neutral": 0.0014,
+      "contradiction": 0.0003
+    }
+  },
+  {
+    "claim": "Never give food to your enemies.",
+    "reference": "Proverbs 25:21",
+    "expected": "contradiction",
+    "predicted": "contradiction",
+    "scores": {
+      "entailment": 0.0,
+      "neutral": 0.0,
+      "contradiction": 1.0
+    }
+  },
+  {
+    "claim": "Answer a fool according to his folly.",
+    "reference": "Proverbs 26:4",
+    "expected": "contradiction",
+    "predicted": "entailment",
+    "scores": {
+      "entailment": 0.537,
+      "neutral": 0.0072,
+      "contradiction": 0.4558
+    }
+  },
+  {
+    "claim": "Answer a fool according to his folly.",
+    "reference": "Proverbs 26:5",
+    "expected": "entailment",
+    "predicted": "entailment",
+    "scores": {
+      "entailment": 0.9989,
+      "neutral": 0.0008,
+      "contradiction": 0.0003
+    }
+  },
+  {
+    "claim": "Answer a fool according to his folly.",
+    "reference": "Proverbs 26:4\u20135",
+    "expected": "neutral",
+    "predicted": "contradiction",
+    "scores": {
+      "entailment": 0.1206,
+      "neutral": 0.0032,
+      "contradiction": 0.8762
+    }
+  },
+  {
+    "claim": "Both answering and not answering a fool are instructed.",
+    "reference": "Proverbs 26:4\u20135",
+    "expected": "entailment",
+    "predicted": "entailment",
+    "scores": {
+      "entailment": 0.8069,
+      "neutral": 0.0951,
+      "contradiction": 0.098
+    }
+  },
+  {
+    "claim": "Christians shared their possessions.",
+    "reference": "Acts 2:44\u201345",
+    "expected": "entailment",
+    "predicted": "entailment",
+    "scores": {
+      "entailment": 0.9986,
+      "neutral": 0.0011,
+      "contradiction": 0.0002
+    }
+  },
+  {
+    "claim": "Modern governments must abolish private property.",
+    "reference": "Acts 2:44\u201345",
+    "expected": "neutral",
+    "predicted": "neutral",
+    "scores": {
+      "entailment": 0.0015,
+      "neutral": 0.9973,
+      "contradiction": 0.0012
+    }
+  },
+  {
+    "claim": "There is a time to dance.",
+    "reference": "Ecclesiastes 3:4",
+    "expected": "entailment",
+    "predicted": "entailment",
+    "scores": {
+      "entailment": 0.9783,
+      "neutral": 0.0137,
+      "contradiction": 0.008
+    }
+  },
+  {
+    "claim": "All dancing is prohibited.",
+    "reference": "Ecclesiastes 3:4",
+    "expected": "contradiction",
+    "predicted": "contradiction",
+    "scores": {
+      "entailment": 0.0003,
+      "neutral": 0.0122,
+      "contradiction": 0.9874
+    }
+  },
+  {
+    "claim": "Love your enemies.",
+    "reference": "Matthew 5:44",
+    "expected": "entailment",
+    "predicted": "entailment",
+    "scores": {
+      "entailment": 0.9924,
+      "neutral": 0.0059,
+      "contradiction": 0.0017
+    }
+  },
+  {
+    "claim": "Hate your enemies.",
+    "reference": "Matthew 5:44",
+    "expected": "contradiction",
+    "predicted": "contradiction",
+    "scores": {
+      "entailment": 0.1238,
+      "neutral": 0.0132,
+      "contradiction": 0.863
+    }
+  },
+  {
+    "claim": "Money answers all things.",
+    "reference": "Ecclesiastes 10:19",
+    "expected": "entailment",
+    "predicted": "entailment",
+    "scores": {
+      "entailment": 0.9711,
+      "neutral": 0.012,
+      "contradiction": 0.0169
+    }
+  },
+  {
+    "claim": "Tax rates must be exactly 17 percent.",
+    "reference": "Mark 12:17",
+    "expected": "neutral",
+    "predicted": "neutral",
+    "scores": {
+      "entailment": 0.0003,
+      "neutral": 0.9976,
+      "contradiction": 0.0021
+    }
+  },
+  {
+    "claim": "God commands the use of smartphones.",
+    "reference": "John 1:1",
+    "expected": "neutral",
+    "predicted": "neutral",
+    "scores": {
+      "entailment": 0.0013,
+      "neutral": 0.9916,
+      "contradiction": 0.0071
+    }
+  }
+]
