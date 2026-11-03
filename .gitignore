@@ -8,3 +8,6 @@ out/
 kaggle/.kaggle/
 
 *.egg-info/
+
+.venv*/
+paper/preview.jpg

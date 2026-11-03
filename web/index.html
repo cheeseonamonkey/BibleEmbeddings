@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark"><meta name="theme-color" content="#15191a">
+<meta name="description" content="Verse Lawyer: an experimental 149M-parameter model arguing for and against practically anything using Bible verses.">
+<meta property="og:title" content="Verse Lawyer — Biblical argument laboratory">
+<meta property="og:description" content="One small model. Two sides. A remarkable capacity to misunderstand scripture.">
+<title>Verse Lawyer — Biblical argument laboratory</title>
+<link rel="stylesheet" href="./style.css"><script src="./app.js" defer></script>
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <a href="./" class="brand">Verse Lawyer <span>Experimental</span></a>
+    <span id="status" class="status" role="status" aria-live="polite">Checking model…</span>
+  </header>
+  <main>
+    <section class="intro">
+      <div class="eyebrow">NATURAL LANGUAGE INFERENCE / SCRIPTURAL RETRIEVAL</div>
+      <h1>A biblical argument for practically anything.</h1>
+      <p>Enter a claim. One 149M-parameter model searches the Bible for evidence <em>for</em> and <em>against</em> it. Occasionally, the burning bush becomes a suspect in 9/11.</p>
+      <div class="facts"><span>149.6M parameters</span><span>116,091 passages</span><span>King James Version</span><span>No generative LLM</span></div>
+    </section>
+    <section class="workspace" aria-labelledby="input-title">
+      <div class="section-title"><h2 id="input-title">Submit a proposition</h2><span>Any claim. Sensible or otherwise.</span></div>
+      <form id="form">
+        <label class="sr-only" for="claim">Your proposition</label>
+        <div class="input-row">
+          <input id="claim" name="claim" maxlength="180" type="text" autocomplete="off" spellcheck="true" placeholder="e.g., Bush did 9/11." value="Bush did 9/11." required>
+          <button id="argue" type="submit">Make the case</button>
+        </div>
+        <p class="input-hint">A model score is not evidence that something happened. Your query is processed on this server and is not saved by the application.</p>
+      </form>
+      <div class="examples" aria-label="Example propositions">
+        <span>TRY</span>
+        <button type="button" data-claim="Bush did 9/11.">The burning bush</button>
+        <button type="button" data-claim="God prefers cats over dogs.">Cats vs. dogs</button>
+        <button type="button" data-claim="The Bible predicted TikTok.">Biblical TikTok</button>
+        <button type="button" data-claim="Never feed an enemy who is hungry.">Enemy snacks</button>
+        <button type="button" data-claim="Money answers all things.">Money solves everything</button>
+        <button type="button" data-claim="There is a time to dance.">Mandatory dancing</button>
+      </div>
+    </section>
+    <section class="results" id="results" aria-labelledby="results-heading">
+      <div class="section-title"><h2 id="results-heading">Arguments</h2><span id="run-status" role="status" aria-live="polite">No verdict yet.</span></div>
+      <div class="columns">
+        <div class="argument-column">
+          <div class="column-head"><h3>FOR</h3><span>Passages interpreted as supporting</span></div>
+          <div id="support" class="cards"><p class="empty">Evidence will appear here. Possibly.</p></div>
+        </div>
+        <div class="argument-column">
+          <div class="column-head"><h3>AGAINST</h3><span>Passages interpreted as opposing</span></div>
+          <div id="oppose" class="cards"><p class="empty">The opposition hasn't had its turn.</p></div>
+        </div>
+      </div>
+      <p class="result-foot" id="result-foot">Scores reflect the model's classification of selected passages—not factual truth or a calibrated probability. It can be confidently wrong.</p>
+    </section>
+    <section class="explain" aria-labelledby="explain-heading">
+      <div class="section-title"><h2 id="explain-heading">The experiment</h2><span>Small model, expansive interpretations.</span></div>
+      <div class="steps">
+        <div><span class="step-index">01</span><h3>Retrieve</h3><p>Search 116,091 overlapping one- to five-verse passages. BM25 supplies candidates.</p></div>
+        <div><span class="step-index">02</span><h3>Argue</h3><p>A single fine-tuned ModernBERT scores support, contradiction, and neutrality.</p></div>
+        <div><span class="step-index">03</span><h3>Misinterpret</h3><p>Nearby verses can reverse a verdict. That's a measured failure, not a hidden feature.</p></div>
+      </div>
+      <p class="fineprint">Research prototype. The 93.8% Bible evaluation result applies to supplied claim–passage pairs, not unrestricted retrieval. This live version deliberately retains the end-to-end errors documented in the paper.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-label"><strong>Verse Lawyer</strong><span>Experimental biblical prooftexting, 2026</span></div>
+    <nav aria-label="Project links">
+      <a class="paper-link" href="./paper.pdf" target="_blank" rel="noopener">Read the research paper <span>PDF ↗</span></a>
+      <a class="github-link" href="https://github.com/cheeseonamonkey/BibleEmbeddings" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
+    </nav>
+  </footer>
+</div>
+</body>
+</html>

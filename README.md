@@ -1,5 +1,17 @@
 # BibleEmbeddings — Verse Lawyer
 
+## Public web demo
+
+[Verse Lawyer](https://vmi3447449.contaboserver.net/verse-lawyer/) runs the
+saved 149.6M-parameter checkpoint on CPU with 14 BM25 candidates and contextual
+NLI. It intentionally retains the measured failures (including the burning
+bush example). The [paper (PDF)](https://vmi3447449.contaboserver.net/verse-lawyer/paper.pdf)
+is linked only in the page footer. This is not a historical fact-checker.
+
+The page, API and Nginx configuration live under `web/` and `deploy/`;
+model weights and the Bible corpus live outside the public static root.
+The paper source and its ReportLab builder live under `paper/`.
+
 **Find biblical arguments FOR and AGAINST any proposition.** A research experiment in
 prooftexting, not a predictor of what is true.
 

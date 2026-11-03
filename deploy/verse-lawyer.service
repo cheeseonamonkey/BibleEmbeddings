@@ -1,0 +1,37 @@
+[Unit]
+Description=Verse Lawyer public NLI demo (loopback only)
+After=network.target
+
+[Service]
+Type=simple
+User=verselawyer
+Group=verselawyer
+WorkingDirectory=/srv/verse-lawyer
+ExecStart=/srv/verse-lawyer/.venv/bin/python -u /srv/verse-lawyer/server.py
+Environment=PYTHONPATH=/srv/verse-lawyer/src
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=HF_HUB_OFFLINE=1
+Environment=TOKENIZERS_PARALLELISM=false
+Environment=HF_HOME=/var/lib/verse-lawyer/cache
+Environment=OMP_NUM_THREADS=3
+Environment=MKL_NUM_THREADS=3
+Environment=VERSE_THREADS=3
+Environment=VERSE_MODEL=/var/lib/verse-lawyer/model
+Environment=VERSE_CORPUS=/var/lib/verse-lawyer/en_kjv.json
+Restart=on-failure
+RestartSec=4
+TimeoutStartSec=120
+UMask=0027
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_UNIX AF_INET
+MemoryMax=2500M
+TasksMax=64
+
+[Install]
+WantedBy=multi-user.target
