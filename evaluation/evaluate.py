@@ -24,15 +24,23 @@ def main():
     correct = 0
     details = []
     for row in rows:
-        ref = row["reference"]
-        if ref not in refs:
-            raise ValueError(f"Unknown reference: {ref}")
-        probabilities = judge.predict([refs[ref].text], row["claim"])[0]
+        if row["reference"] not in refs:
+            raise ValueError(f"Unknown reference: {row['reference']}")
+    claims = [row.get("hypothesis", row.get("claim")) for row in rows]
+    if any(not isinstance(claim, str) for claim in claims):
+        raise ValueError("Missing hypothesis or claim in evaluation rows")
+    scores = judge.predict_pairs([refs[row["reference"]].text for row in rows], claims)
+    for row, claim, probabilities in zip(rows, claims, scores):
         predicted = max(probabilities, key=probabilities.get)
-        expected = row["label"]
+        raw_label = row["label"]
+        expected = LABELS[raw_label] if isinstance(raw_label, int) else raw_label
+        if expected not in LABELS:
+            raise ValueError(f"Invalid label {raw_label}")
         confusion[expected][predicted] += 1
         correct += predicted == expected
-        details.append({**row, "predicted": predicted, "scores": probabilities})
+        details.append({"reference": row["reference"], "claim": claim,
+                        "label": expected, "predicted": predicted,
+                        "scores": probabilities})
 
     f1 = {}
     for label in LABELS:

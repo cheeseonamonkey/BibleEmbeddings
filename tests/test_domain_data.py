@@ -36,3 +36,14 @@ def test_curated_references_span_multiple_verses():
     rows = load_rows(ROOT / "training/domain_pairs.jsonl")
     assert sum("–" in row["reference"] for row in rows) >= 20
     assert any(row["kind"] == "hard_neutral" for row in rows)
+
+
+def test_fresh_holdout_has_no_seen_passages():
+    holdout = load_rows(ROOT / "evaluation/fresh_holdout.jsonl")
+    domain = load_rows(ROOT / "training/domain_pairs.jsonl")
+    dev = load_rows(ROOT / "evaluation/seed_pairs.jsonl")
+    assert len(holdout) >= 90
+    assert not ({r["premise"] for r in holdout} &
+                ({r["premise"] for r in domain} | {r["premise"] for r in dev}))
+    counts = Counter(row["label"] for row in holdout)
+    assert counts[0] == counts[1] == counts[2]

@@ -82,10 +82,16 @@ class NLIJudge:
         return np.concatenate(result, axis=0)
 
     def predict(self, premises: list[str], hypothesis: str) -> list[dict[str, float]]:
+        return self.predict_pairs(premises, [hypothesis] * len(premises))
+
+    def predict_pairs(self, premises: list[str], hypotheses: list[str]) -> list[dict[str, float]]:
+        if len(premises) != len(hypotheses):
+            raise ValueError("Premise and hypothesis counts differ")
         results = []
         for start in range(0, len(premises), self.batch_size):
             batch = premises[start:start + self.batch_size]
-            inputs = self.tokenizer(batch, [hypothesis] * len(batch),
+            claims = hypotheses[start:start + self.batch_size]
+            inputs = self.tokenizer(batch, claims,
                                     padding=True, truncation=True, max_length=512,
                                     return_tensors="pt").to(self.device)
             with self.torch.inference_mode():
