@@ -1,0 +1,18 @@
+{
+  "count": 363,
+  "labels": {
+    "entailment": 109,
+    "contradiction": 109,
+    "neutral": 145
+  },
+  "kinds": {
+    "literal_or_paraphrase": 109,
+    "explicit_opposition": 109,
+    "topical_non_sequitur": 109,
+    "hard_neutral": 36
+  },
+  "references": 109,
+  "corpus_sha256": "f627b3c24a617013a4514ab24b6dd1bb305b09af237994c018f74cb9c7e71f41",
+  "data_sha256": "baef77e32e29d3baff584aad4c7fd82ac47d2c5cb354ec0146db4a5b857d8d10",
+  "note": "Author-crafted claims + deterministic labels, not independently annotated or validated."
+}

@@ -1,0 +1,15 @@
+{
+  "id": "ffatty/verse-lawyer-domain-v1-149m",
+  "title": "Verse Lawyer Domain V1 149M",
+  "code_file": "verse-lawyer-domain.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "kernel_sources": [
+    "ffatty/verse-lawyer-modernbert-149m-joint"
+  ],
+  "model_sources": []
+}
