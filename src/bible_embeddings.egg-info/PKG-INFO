@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: bible-embeddings
+Version: 0.1.0
+Summary: Claim-conditioned biblical evidence retrieval and NLI
+Requires-Python: >=3.10
+Requires-Dist: numpy<3,>=1.24
+Requires-Dist: rank-bm25<1,>=0.2.2
+Provides-Extra: models
+Requires-Dist: torch>=2.2; extra == "models"
+Requires-Dist: transformers<5,>=4.48; extra == "models"
+Requires-Dist: sentence-transformers<6,>=3; extra == "models"
+Provides-Extra: train
+Requires-Dist: torch>=2.2; extra == "train"
+Requires-Dist: transformers<5,>=4.48; extra == "train"
+Requires-Dist: datasets<5,>=3; extra == "train"
+Requires-Dist: accelerate<2,>=1; extra == "train"
+Requires-Dist: scikit-learn>=1.3; extra == "train"

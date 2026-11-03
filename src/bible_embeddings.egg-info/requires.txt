@@ -1,0 +1,14 @@
+numpy<3,>=1.24
+rank-bm25<1,>=0.2.2
+
+[models]
+torch>=2.2
+transformers<5,>=4.48
+sentence-transformers<6,>=3
+
+[train]
+torch>=2.2
+transformers<5,>=4.48
+datasets<5,>=3
+accelerate<2,>=1
+scikit-learn>=1.3

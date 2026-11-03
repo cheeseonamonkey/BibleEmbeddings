@@ -1,0 +1,14 @@
+{
+  "id": "ffatty/verse-lawyer-modernbert-nli",
+  "title": "Verse Lawyer \u2014 ModernBERT 149M NLI Baseline",
+  "code_file": "verse-lawyer-nli.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
