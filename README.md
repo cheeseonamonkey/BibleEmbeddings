@@ -46,7 +46,7 @@ model signals, **not probabilities a biblical or historical proposition is true*
 ```sh
 python training/build_notebook.py
 kaggle kernels push -p kaggle --accelerator NvidiaTeslaT4
-kaggle kernels status ffatty/verse-lawyer-modernbert-149m-nli-baseline
+kaggle kernels status ffatty/verse-lawyer-modernbert-149m-joint
 ```
 
 The notebook runs on one T4 to avoid DataParallel compilation conflicts. It

@@ -1,5 +1,5 @@
 {
-  "id": "ffatty/verse-lawyer-modernbert-149m-nli-baseline",
+  "id": "ffatty/verse-lawyer-modernbert-149m-joint",
   "title": "Verse Lawyer ModernBERT 149M Joint",
   "code_file": "verse-lawyer-joint.ipynb",
   "language": "python",

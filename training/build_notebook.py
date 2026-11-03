@@ -34,7 +34,7 @@ notebook = {
 folder.mkdir(exist_ok=True)
 (folder / "verse-lawyer-joint.ipynb").write_text(json.dumps(notebook, indent=1))
 meta = {
-    "id": "ffatty/verse-lawyer-modernbert-149m-nli-baseline",
+    "id": "ffatty/verse-lawyer-modernbert-149m-joint",
     "title": "Verse Lawyer ModernBERT 149M Joint",
     "code_file": "verse-lawyer-joint.ipynb",
     "language": "python", "kernel_type": "notebook",
