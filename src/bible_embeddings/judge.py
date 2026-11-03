@@ -36,7 +36,9 @@ class NLIJudge:
         from transformers import AutoModelForSequenceClassification, AutoTokenizer
         self.torch = torch
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
-        self.model = AutoModelForSequenceClassification.from_pretrained(model_path).to(self.device).eval()
+        self.model = AutoModelForSequenceClassification.from_pretrained(
+            model_path, reference_compile=False, attn_implementation="eager"
+        ).to(self.device).eval()
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         self.batch_size = batch_size
         self.fingerprint = self._fingerprint(model_path)

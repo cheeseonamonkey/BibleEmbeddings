@@ -1,45 +1,47 @@
 # BibleEmbeddings — Verse Lawyer
 
-**An experimental argument engine:** enter any proposition; retrieve scriptural passages
-that might support or oppose it. Distinguish persuasive prooftexting from legitimate
-textual evidence. This is not a fact-checker or theological truth detector.
+**Find biblical arguments FOR and AGAINST any proposition.** A research experiment in
+prooftexting, not a predictor of what is true.
 
-## Architecture
+## One neural model, two jobs
 
-1. **Hybrid retrieval:** BM25 + optional MiniLM embeddings; reciprocal rank fusion.
-2. **Multi-verse passages:** overlapping 1-, 2-, 3- and 5-verse windows. Preserve book,
-   chapter and verse ranges; never merge chapters. Overlapping retrieval hits are
-   deduplicated to encourage independent evidence.
-3. **Specialized judge:** fine-tuned ModernBERT-base (~149M parameters). NLI labels
-   are *entailment*, *contradiction*, *neutral*. The claim is always the hypothesis.
-4. **Context audit:** score isolated passage and surrounding context separately.
-   The difference can indicate cherry-picking.
-5. **Outputs:** ranked FOR/AGAINST with raw confidence signals and exact references.
-   No forced winner or fabricated evidence.
+- **Retrieve:** BM25 lexical search, optionally fused with dense passage vectors
+  produced by **the same ModernBERT checkpoint**. No separate embedding model.
+- **Judge:** the same ~149M-parameter ModernBERT with a 3-class NLI head scores
+  entailment, contradiction, and neutral evidence. No generative agent required.
+- **Context:** score each isolated passage and its surrounding verses separately.
+  Show possible cherry-picking, without collapsing conflicting adjacent verses.
+- **Passages:** 1-, 2-, 3-, and 5-verse overlapping windows, with exact references.
+  Longer pericopes and cross-chapter sections can be added later.
 
-## Quickstart
+The neural checkpoint is fine-tuned jointly on **NLI cross-entropy** plus a modest
+**contrastive retrieval objective** from entailment pairs. This trains one shared
+backbone, not two independent models. The first run uses MultiNLI to test the
+pipeline; biblical adaptation requires better labeled data.
 
-The corpus is not committed. Obtain KJV JSON from
-[thiagobodruk/bible](https://github.com/thiagobodruk/bible), save
-`json/en_kjv.json` to `data/en_kjv.json`.
+## Run
+
+Get the KJV JSON from [thiagobodruk/bible](https://github.com/thiagobodruk/bible)
+(`json/en_kjv.json`) and place it at `data/en_kjv.json`.
 
 ```sh
-python -m pip install -e .
-verse-lawyer --data data/en_kjv.json --claim "money buys happiness"
+pip install -e .
+verse-lawyer --data data/en_kjv.json --claim "answer a fool"
 
-# Dense retrieval (optional; model downloaded once):
-python -m pip install -e '.[models]'
-verse-lawyer --data data/en_kjv.json --claim "money buys happiness" \
-  --embed-model sentence-transformers/all-MiniLM-L6-v2 --cache out/kjv-minilm.npz
+# After training and downloading the one checkpoint:
+pip install -e '.[models]'
+verse-lawyer --data data/en_kjv.json --claim "answer a fool" \
+  --model out/verse-joint-v1/model --json
 
-# After an NLI model has been trained and downloaded:
-verse-lawyer --data data/en_kjv.json --claim "money buys happiness" \
-  --nli-model out/modernbert-mnli/model --json
+# Optional dense retrieval using that SAME model (slow on first indexing):
+verse-lawyer --data data/en_kjv.json --claim "answer a fool" \
+  --model out/verse-joint-v1/model --semantic --cache out/kjv-joint.npz
 ```
 
-Retrieval-only output contains *candidates*, not evidence judgments.
+BM25-only output is retrieval candidates, not evidence. Scores are heuristic
+model signals, **not probabilities a biblical or historical proposition is true**.
 
-## Initial GPU experiment
+## Kaggle training
 
 ```sh
 python training/build_notebook.py
@@ -47,24 +49,22 @@ kaggle kernels push -p kaggle --accelerator NvidiaTeslaT4
 kaggle kernels status ffatty/verse-lawyer-modernbert-149m-nli-baseline
 ```
 
-The notebook fine-tunes ModernBERT on a seeded subset of MultiNLI (6,000 train /
-1,000 held-out evaluation pairs), reporting macro-F1 and accuracy, and exports
-the best checkpoint. **This is a generic NLI baseline, not biblical adaptation.**
+The notebook runs on one T4 to avoid DataParallel compilation conflicts. It
+loads ModernBERT with `reference_compile=False`, trains on 6,000 MNLI pairs,
+validates on 1,000 held-out examples, and reports accuracy, macro-F1, and
+held-out retrieval Recall@1/10. Saves a single checkpoint and metrics.
 
-We include 30 provisional Bible-specific labeled cases in `evaluation/seed.jsonl`.
-Use `python evaluation/evaluate.py --data data/en_kjv.json --model MODEL_PATH`
-to smoke-test a trained checkpoint; the tiny seed is not a scientific benchmark.
+The 30 provisional Bible-specific pairs in `evaluation/seed.jsonl` are a
+smoke test only, not training data or a reliable benchmark:
 
-Next: curate 200–500 gold biblical evidence pairs, including counterfactuals,
-paraphrases, translation-sensitive examples, and misleading isolated verses.
-Group held-out evaluation by proposition family *and* overlapping passage to
-prevent near-duplicate leakage. Only then add domain fine-tuning.
+```sh
+python evaluation/evaluate.py --data data/en_kjv.json \
+  --model out/verse-joint-v1/model
+```
 
-## Limitations
+**Next:** create 200–500 carefully labeled claims with hard negatives and
+multiple interpretations. Group test splits by related passages and proposition
+families. Compare with lexical-only retrieval and general-NLI baselines before
+claiming improved scriptural reasoning.
 
-- NLI confidence is not a probability of truth. Scores require calibration.
-- Biblical metaphor or analogy is not historical evidence for modern events.
-- Different traditions disagree on interpretations; "neutral" can be appropriate.
-- Current windows are limited to 5 verses within a single chapter. Longer
-  pericopes and cross-chapter spans can be retrieved in a later stage.
-- Corpora and models must be versioned for comparable experiments.
+The model cannot establish historical facts from verses about unrelated events.
