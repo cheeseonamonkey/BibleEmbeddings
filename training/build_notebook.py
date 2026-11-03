@@ -29,7 +29,7 @@ nb = {
 }
 (folder / "verse-lawyer-nli.ipynb").write_text(json.dumps(nb, indent=1))
 metadata = {
-    "id": "ffatty/verse-lawyer-modernbert-nli",
+    "id": "ffatty/verse-lawyer-modernbert-149m-nli-baseline",
     "title": "Verse Lawyer — ModernBERT 149M NLI Baseline",
     "code_file": "verse-lawyer-nli.ipynb",
     "language": "python",

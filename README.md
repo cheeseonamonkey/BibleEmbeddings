@@ -44,7 +44,7 @@ Retrieval-only output contains *candidates*, not evidence judgments.
 ```sh
 python training/build_notebook.py
 kaggle kernels push -p kaggle --accelerator NvidiaTeslaT4
-kaggle kernels status ffatty/verse-lawyer-modernbert-nli
+kaggle kernels status ffatty/verse-lawyer-modernbert-149m-nli-baseline
 ```
 
 The notebook fine-tunes ModernBERT on a seeded subset of MultiNLI (6,000 train /
