@@ -2,11 +2,17 @@
 
 ## Public web demo
 
-[Verse Lawyer](https://vmi3447449.contaboserver.net/verse-lawyer/) runs the
+[Verse Lawyer](https://mansion.041700.xyz/verse-lawyer/) runs the
 saved 149.6M-parameter checkpoint on CPU with 14 BM25 candidates and contextual
 NLI. It intentionally retains the measured failures (including the burning
-bush example). The [paper (PDF)](https://vmi3447449.contaboserver.net/verse-lawyer/paper.pdf)
+bush example). The [paper (PDF)](https://mansion.041700.xyz/verse-lawyer/paper.pdf)
 is linked only in the page footer. This is not a historical fact-checker.
+
+The other public experiments use the same IPv4-only hostname:
+[Alex Voice](https://mansion.041700.xyz/alexvoice/) and
+[Typability](https://mansion.041700.xyz/typability/).
+The former VPS-hostname public demo paths issue scoped, permanent **308 redirects**;
+management/MCP routes are intentionally not redirected.
 
 The page, API and Nginx configuration live under `web/` and `deploy/`;
 model weights and the Bible corpus live outside the public static root.
