@@ -1,7 +1,9 @@
 """Compare isolated passages with surrounding context using a calibrated NLI head."""
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
+from pathlib import Path
+import hashlib
 
 from .corpus import Passage, overlap
 
@@ -37,10 +39,45 @@ class NLIJudge:
         self.model = AutoModelForSequenceClassification.from_pretrained(model_path).to(self.device).eval()
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         self.batch_size = batch_size
+        self.fingerprint = self._fingerprint(model_path)
         labels = {int(k): str(v).lower() for k, v in self.model.config.id2label.items()}
         if set(labels.values()) != set(self.LABELS):
             raise ValueError(f"Expected NLI labels, got {labels}")
         self.ids = {name: i for i, name in labels.items()}
+
+    @staticmethod
+    def _fingerprint(path: str) -> str:
+        """Invalidate embedding caches when model weights change at the same path."""
+        root = Path(path)
+        digester = hashlib.sha256()
+        files = sorted(root.glob("*.safetensors")) + sorted(root.glob("pytorch_model*.bin"))
+        if not files:
+            # Remote model identifiers are allowed, but callers should pin revisions.
+            return path
+        for file in files:
+            digester.update(file.name.encode())
+            with file.open("rb") as stream:
+                for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+                    digester.update(chunk)
+        return digester.hexdigest()
+
+    def embed(self, texts: list[str], batch_size: int = 32):
+        """L2-normalized mean-pooled embeddings from the SAME NLI encoder."""
+        import numpy as np
+        if not texts:
+            return np.empty((0, self.model.config.hidden_size), dtype=np.float32)
+        result = []
+        for start in range(0, len(texts), batch_size):
+            chunk = texts[start:start + batch_size]
+            inputs = self.tokenizer(chunk, padding=True, truncation=True,
+                                    max_length=256, return_tensors="pt").to(self.device)
+            with self.torch.inference_mode():
+                hidden = self.model.base_model(**inputs).last_hidden_state
+                mask = inputs["attention_mask"].unsqueeze(-1)
+                pooled = (hidden * mask).sum(1) / mask.sum(1).clamp(min=1)
+                pooled = self.torch.nn.functional.normalize(pooled.float(), dim=-1)
+            result.append(pooled.cpu().numpy())
+        return np.concatenate(result, axis=0)
 
     def predict(self, premises: list[str], hypothesis: str) -> list[dict[str, float]]:
         results = []

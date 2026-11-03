@@ -66,3 +66,29 @@ def test_scoring_deduplicates_within_not_between_stances(source):
                   {"entailment": .02, "neutral": .03, "contradiction": .95})
     assert top_evidence([e1, e2], "entailment") == [e1]
     assert top_evidence([e1, e3], "contradiction") == [e3]
+
+
+def test_single_encoder_serves_dense_retrieval(source):
+    import numpy as np
+    class SharedFake:
+        fingerprint = "shared-model-v1"
+        def embed(self, texts):
+            return np.array([[float("light" in t.lower()),
+                              float("earth" in t.lower()), 0.01] for t in texts], dtype=np.float32)
+    r = Retriever(load_passages(source), encoder=SharedFake(), corpus_path=source)
+    assert any("light" in p.text.lower()
+               for p, _ in r.search("light", limit=3, remove_overlap=False))
+
+
+def test_stale_dense_cache_is_rejected(source, tmp_path):
+    import numpy as np
+    class SharedFake:
+        def __init__(self, identity):
+            self.fingerprint = identity
+        def embed(self, texts):
+            return np.ones((len(texts), 3), dtype=np.float32)
+    cache = tmp_path / "embeddings.npz"
+    passages = load_passages(source)
+    Retriever(passages, encoder=SharedFake("a"), cache=cache, corpus_path=source)
+    with pytest.raises(ValueError, match="Stale embedding cache"):
+        Retriever(passages, encoder=SharedFake("b"), cache=cache, corpus_path=source)
