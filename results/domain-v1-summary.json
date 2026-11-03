@@ -1,0 +1,167 @@
+{
+  "model": "ModernBERT-base, shared retrieval and NLI backbone",
+  "parameters": 149607171,
+  "checkpoint_sha256": "d3280a40243750a1cee529dce25a1f665e58d090607fd517d803f1b4dc80e3fc",
+  "train_domain_examples": 363,
+  "general_training_examples": 2200,
+  "best_epoch": 1,
+  "general_nli": {
+    "before": 0.7689999938011169,
+    "after": 0.7950000166893005
+  },
+  "bible_dev": {
+    "before": 0.8666666746139526,
+    "after": 0.9333333373069763
+  },
+  "fresh_holdout": {
+    "n": 96,
+    "original": {
+      "accuracy": 0.8541666666666666,
+      "macro_f1": 0.8541730670762929,
+      "class_f1": {
+        "entailment": 0.8666666666666667,
+        "neutral": 0.8387096774193549,
+        "contradiction": 0.8571428571428571
+      },
+      "confusion": {
+        "entailment": {
+          "entailment": 26,
+          "neutral": 4,
+          "contradiction": 2
+        },
+        "neutral": {
+          "neutral": 26,
+          "contradiction": 6
+        },
+        "contradiction": {
+          "contradiction": 30,
+          "entailment": 2
+        }
+      }
+    },
+    "domain": {
+      "accuracy": 0.9375,
+      "macro_f1": 0.937817969067969,
+      "class_f1": {
+        "entailment": 0.9230769230769231,
+        "neutral": 0.9841269841269841,
+        "contradiction": 0.90625
+      },
+      "confusion": {
+        "entailment": {
+          "entailment": 30,
+          "contradiction": 2
+        },
+        "neutral": {
+          "neutral": 31,
+          "contradiction": 1
+        },
+        "contradiction": {
+          "contradiction": 29,
+          "entailment": 3
+        }
+      }
+    },
+    "fixed": [
+      {
+        "reference": "Genesis 50:20",
+        "claim": "Joseph says his brothers intended evil, but God intended good.",
+        "label": "entailment",
+        "old": "neutral",
+        "new": "entailment"
+      },
+      {
+        "reference": "Deuteronomy 4:2",
+        "claim": "Modern software should prohibit editing all documents.",
+        "label": "neutral",
+        "old": "contradiction",
+        "new": "neutral"
+      },
+      {
+        "reference": "Joshua 6:20",
+        "claim": "The walls of Jericho fell after the people shouted and trumpets sounded.",
+        "label": "entailment",
+        "old": "neutral",
+        "new": "entailment"
+      },
+      {
+        "reference": "Romans 6:23",
+        "claim": "Civil law should execute a person for every sin.",
+        "label": "neutral",
+        "old": "contradiction",
+        "new": "neutral"
+      },
+      {
+        "reference": "2 Corinthians 12:9",
+        "claim": "God says his grace is sufficient for Paul.",
+        "label": "entailment",
+        "old": "neutral",
+        "new": "entailment"
+      },
+      {
+        "reference": "2 Corinthians 12:9",
+        "claim": "Every chronic disease disappears immediately after prayer.",
+        "label": "neutral",
+        "old": "contradiction",
+        "new": "neutral"
+      },
+      {
+        "reference": "Philippians 2:3",
+        "claim": "The passage forbids all competitive sports.",
+        "label": "neutral",
+        "old": "contradiction",
+        "new": "neutral"
+      },
+      {
+        "reference": "1 Peter 5:7",
+        "claim": "All mental health conditions are caused by personal sin.",
+        "label": "neutral",
+        "old": "contradiction",
+        "new": "neutral"
+      },
+      {
+        "reference": "Acts 20:34\u201335",
+        "claim": "The passage encourages supporting the weak through work and giving.",
+        "label": "entailment",
+        "old": "neutral",
+        "new": "entailment"
+      }
+    ],
+    "regressed": [
+      {
+        "reference": "Genesis 50:20",
+        "claim": "Joseph says his brothers intended good while God intended evil.",
+        "label": "contradiction",
+        "old": "contradiction",
+        "new": "entailment"
+      }
+    ]
+  },
+  "retrieval": {
+    "before": {
+      "entailment": {
+        "recall_at_1": 0.875,
+        "recall_at_10": 0.96875,
+        "mrr": 0.9097648859024048
+      },
+      "contradiction": {
+        "recall_at_1": 0.7109375,
+        "recall_at_10": 0.90625,
+        "mrr": 0.7819991111755371
+      }
+    },
+    "after": {
+      "entailment": {
+        "recall_at_1": 0.890625,
+        "recall_at_10": 0.984375,
+        "mrr": 0.9335747957229614
+      },
+      "contradiction": {
+        "recall_at_1": 0.6953125,
+        "recall_at_10": 0.9296875,
+        "mrr": 0.7749788761138916
+      }
+    }
+  },
+  "warning": "Small author-curated examples; only provisional evidence for improvement."
+}

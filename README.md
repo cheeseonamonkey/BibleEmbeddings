@@ -89,14 +89,33 @@ plus evidence retrieval. **Both entailment and contradiction are relevant
 retrieval targets**; neutral examples are NLI hard negatives. The only neural
 network remains the one ModernBERT encoder with an NLI head.
 
-Report the Bible development set, general NLI, and retrieval scores before
-promoting a new checkpoint. Since the Bible set is tiny and already examined,
-its accuracy is not a definitive measure of generalization. Train/test splits
-must separate proposition families and overlapping scriptural passages.
+Always report Bible development, independent holdout, general NLI, and retrieval
+scores before promoting a checkpoint. The Bible datasets are small and
+provisionally annotated; results are not a definitive generalization measure.
 
 **Next:** create 200–500 carefully labeled claims with hard negatives and
 multiple interpretations. Group test splits by related passages and proposition
 families. Compare with lexical-only retrieval and general-NLI baselines before
 claiming improved scriptural reasoning.
+
+## Completed domain-tuning results
+
+The [Bible-specific continuation](https://www.kaggle.com/code/ffatty/verse-lawyer-domain-v1-149m)
+finished successfully (best checkpoint from epoch 1). On a **96-example fresh
+holdout** across 32 unused passages, accuracy rose from **85.4% to 93.8%**;
+neutral F1 rose from **83.9% to 98.4%**. General MultiNLI accuracy increased
+from 76.9% to 79.5%. Contradiction retrieval Recall@1 slipped slightly, from
+71.1% to 69.5%, so semantic retrieval is not uniformly improved.
+
+The ~598 MB checkpoint is in the Kaggle notebook outputs, not GitHub:
+
+```sh
+kaggle kernels output ffatty/verse-lawyer-domain-v1-149m -p out -o
+verse-lawyer --data data/en_kjv.json --model out/verse-domain-v1/model \
+  --claim "the moon is made of cheese" --json
+```
+
+See [the measured results and limitations](results/README.md), including the
+paired holdout comparison, model checksum, mistakes, and remaining work.
 
 The model cannot establish historical facts from verses about unrelated events.

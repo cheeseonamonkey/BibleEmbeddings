@@ -1,0 +1,505 @@
+{
+  "base_checkpoint": "/kaggle/input/notebooks/ffatty/verse-lawyer-modernbert-149m-joint/verse-joint-v1/model",
+  "parameters": 149607171,
+  "train_domain_examples": 363,
+  "training_total_after_repeats": 3652,
+  "domain_repeats": 4,
+  "general_train": 2200,
+  "bible_dev_examples": 30,
+  "epochs": 2,
+  "seed": 2026,
+  "baseline": {
+    "general": {
+      "samples": 1000,
+      "accuracy": 0.7689999938011169,
+      "macro_f1": 0.7686061562500601,
+      "per_class_f1": {
+        "entailment": 0.8043478260869565,
+        "neutral": 0.6980273141122914,
+        "contradiction": 0.8034433285509326
+      },
+      "confusion": [
+        [
+          259,
+          57,
+          15
+        ],
+        [
+          37,
+          230,
+          61
+        ],
+        [
+          17,
+          44,
+          280
+        ]
+      ],
+      "first_errors": [
+        {
+          "claim": "It's been argued that pro-life posters are seeking to humanize the unborn through these depictions.",
+          "expected": "neutral",
+          "predicted": "contradiction",
+          "passage_excerpt": "Zoom-out vs. zoom- Ever since Roe , pro-life posters and pamphlets have depicted isolated fetuses."
+        },
+        {
+          "claim": "The cops set off in pursuit until a traffic accident happened.",
+          "expected": "entailment",
+          "predicted": "neutral",
+          "passage_excerpt": "He fled in his car when cops arrived and led them on a chase that ended in the massive crash."
+        },
+        {
+          "claim": "I managed to escape their grasp and ran just outside the bar.",
+          "expected": "contradiction",
+          "predicted": "neutral",
+          "passage_excerpt": "I was pulled into the bar."
+        },
+        {
+          "claim": "The Chinese labor was seen as less costly and more expendable by the Malay ruling class.",
+          "expected": "neutral",
+          "predicted": "contradiction",
+          "passage_excerpt": "The lucrative tin mines of Kuala Lumpur in the State of Selangor, of Sungai Ujong in Negeri Sembilan, and of Larut and Taiping in Perak were run for the Malay rulers by Chinese man"
+        },
+        {
+          "claim": "Even though this book has flaws, I think it's a good thing.",
+          "expected": "entailment",
+          "predicted": "neutral",
+          "passage_excerpt": "My bottom line is that I would recommend the book to students and colleagues and I hope it does well, despite its anti-intellectual p.c."
+        },
+        {
+          "claim": "It's your turn.",
+          "expected": "contradiction",
+          "predicted": "entailment",
+          "passage_excerpt": "Now it's my turn, and even if I'm walking in a dead man's shoes, I can make my way afresh."
+        },
+        {
+          "claim": "No one would think of that because it's not who you are.",
+          "expected": "neutral",
+          "predicted": "contradiction",
+          "passage_excerpt": "No one would ever think of sentiment in connection with you."
+        },
+        {
+          "claim": "I don't like television much, I do like Cheers though.",
+          "expected": "entailment",
+          "predicted": "neutral",
+          "passage_excerpt": "yeah no i don't know if there's any any series that i pay attention to i try to watch Cheers once in a while"
+        },
+        {
+          "claim": "some do not have the hope that common interests will lead us to a consensus.",
+          "expected": "neutral",
+          "predicted": "contradiction",
+          "passage_excerpt": "I hope that our common interests will lead us to a consensus - one that will provide the country with significant benefits."
+        },
+        {
+          "claim": "They wanted to make the site very user friendly.",
+          "expected": "entailment",
+          "predicted": "neutral",
+          "passage_excerpt": "A button on the Chatterbox page will make this easy, so please do join in."
+        },
+        {
+          "claim": "staff recommendations",
+          "expected": "neutral",
+          "predicted": "entailment",
+          "passage_excerpt": "Recommendations"
+        },
+        {
+          "claim": "I never had any children with my wife.",
+          "expected": "contradiction",
+          "predicted": "neutral",
+          "passage_excerpt": "yeah well i can't i'll you know i say i can't wait for my kids to grow up but i believe i'm going to miss this age when they're gone"
+        }
+      ]
+    },
+    "bible_dev": {
+      "samples": 30,
+      "accuracy": 0.8666666746139526,
+      "macro_f1": 0.8441558441558442,
+      "per_class_f1": {
+        "entailment": 1.0,
+        "neutral": 0.7142857142857143,
+        "contradiction": 0.8181818181818182
+      },
+      "confusion": [
+        [
+          12,
+          0,
+          0
+        ],
+        [
+          0,
+          5,
+          4
+        ],
+        [
+          0,
+          0,
+          9
+        ]
+      ],
+      "first_errors": [
+        {
+          "claim": "You should always answer a fool.",
+          "expected": "neutral",
+          "predicted": "contradiction",
+          "passage_excerpt": "Answer not a fool according to his folly, lest thou also be like unto him. Answer a fool according to his folly, lest he be wise in his own conceit."
+        },
+        {
+          "claim": "Same-sex civil marriage should be prohibited by civil law.",
+          "expected": "neutral",
+          "predicted": "contradiction",
+          "passage_excerpt": "And said, For this cause shall a man leave father and mother, and shall cleave to his wife: and they twain shall be one flesh?"
+        },
+        {
+          "claim": "The Earth is flat.",
+          "expected": "neutral",
+          "predicted": "contradiction",
+          "passage_excerpt": "It is he that sitteth upon the circle of the earth, and the inhabitants thereof are as grasshoppers; that stretcheth out the heavens as a curtain, and spreadeth them out as a tent "
+        },
+        {
+          "claim": "The moon is made of cheese.",
+          "expected": "neutral",
+          "predicted": "contradiction",
+          "passage_excerpt": "A feast is made for laughter, and wine maketh merry: but money answereth all things ."
+        }
+      ]
+    },
+    "retrieval": {
+      "entailment": {
+        "recall_at_1": 0.875,
+        "recall_at_10": 0.96875,
+        "mrr": 0.9097648859024048
+      },
+      "contradiction": {
+        "recall_at_1": 0.7109375,
+        "recall_at_10": 0.90625,
+        "mrr": 0.7819991111755371
+      }
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "general": {
+        "samples": 1000,
+        "accuracy": 0.7950000166893005,
+        "macro_f1": 0.7920672542521282,
+        "per_class_f1": {
+          "entailment": 0.8205128205128205,
+          "neutral": 0.7189542483660131,
+          "contradiction": 0.8367346938775511
+        },
+        "confusion": [
+          [
+            288,
+            34,
+            9
+          ],
+          [
+            59,
+            220,
+            49
+          ],
+          [
+            24,
+            30,
+            287
+          ]
+        ],
+        "first_errors": [
+          {
+            "claim": "It's been argued that pro-life posters are seeking to humanize the unborn through these depictions.",
+            "expected": "neutral",
+            "predicted": "contradiction",
+            "passage_excerpt": "Zoom-out vs. zoom- Ever since Roe , pro-life posters and pamphlets have depicted isolated fetuses."
+          },
+          {
+            "claim": "Severn knows everything about the Jarvis children.",
+            "expected": "neutral",
+            "predicted": "contradiction",
+            "passage_excerpt": "The four Javis children? asked Severn."
+          },
+          {
+            "claim": "The Chinese labor was seen as less costly and more expendable by the Malay ruling class.",
+            "expected": "neutral",
+            "predicted": "contradiction",
+            "passage_excerpt": "The lucrative tin mines of Kuala Lumpur in the State of Selangor, of Sungai Ujong in Negeri Sembilan, and of Larut and Taiping in Perak were run for the Malay rulers by Chinese man"
+          },
+          {
+            "claim": "It's your turn.",
+            "expected": "contradiction",
+            "predicted": "entailment",
+            "passage_excerpt": "Now it's my turn, and even if I'm walking in a dead man's shoes, I can make my way afresh."
+          },
+          {
+            "claim": "I don't like television much, I do like Cheers though.",
+            "expected": "entailment",
+            "predicted": "neutral",
+            "passage_excerpt": "yeah no i don't know if there's any any series that i pay attention to i try to watch Cheers once in a while"
+          },
+          {
+            "claim": "some do not have the hope that common interests will lead us to a consensus.",
+            "expected": "neutral",
+            "predicted": "contradiction",
+            "passage_excerpt": "I hope that our common interests will lead us to a consensus - one that will provide the country with significant benefits."
+          },
+          {
+            "claim": "They wanted to make the site very user friendly.",
+            "expected": "entailment",
+            "predicted": "neutral",
+            "passage_excerpt": "A button on the Chatterbox page will make this easy, so please do join in."
+          },
+          {
+            "claim": "staff recommendations",
+            "expected": "neutral",
+            "predicted": "entailment",
+            "passage_excerpt": "Recommendations"
+          },
+          {
+            "claim": "I never had any children with my wife.",
+            "expected": "contradiction",
+            "predicted": "neutral",
+            "passage_excerpt": "yeah well i can't i'll you know i say i can't wait for my kids to grow up but i believe i'm going to miss this age when they're gone"
+          },
+          {
+            "claim": "While kids today are symbols of success and status, and their parents are too. ",
+            "expected": "neutral",
+            "predicted": "entailment",
+            "passage_excerpt": "Rather, kids today are not only little bundles of joy but also are perhaps the ultimate symbols of worldly success and status."
+          },
+          {
+            "claim": "I agree that he didn't have the same support as Montana, but he did well.",
+            "expected": "neutral",
+            "predicted": "entailment",
+            "passage_excerpt": "well that's uh i agree with you there i mean he didn't have the surrounding cast that Montana had there's no doubt about that"
+          },
+          {
+            "claim": "People simply prefer to be comfortable inside rather than outdoors in the sweltering heat.",
+            "expected": "entailment",
+            "predicted": "neutral",
+            "passage_excerpt": "Porches and stoops, those symbols of a vibrant social life, stopped being used as gathering places for a rather practical reason--air conditioning."
+          }
+        ]
+      },
+      "bible_dev": {
+        "samples": 30,
+        "accuracy": 0.9333333373069763,
+        "macro_f1": 0.9249999999999999,
+        "per_class_f1": {
+          "entailment": 1.0,
+          "neutral": 0.875,
+          "contradiction": 0.9
+        },
+        "confusion": [
+          [
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            7,
+            2
+          ],
+          [
+            0,
+            0,
+            9
+          ]
+        ],
+        "first_errors": [
+          {
+            "claim": "You should always answer a fool.",
+            "expected": "neutral",
+            "predicted": "contradiction",
+            "passage_excerpt": "Answer not a fool according to his folly, lest thou also be like unto him. Answer a fool according to his folly, lest he be wise in his own conceit."
+          },
+          {
+            "claim": "The Earth is flat.",
+            "expected": "neutral",
+            "predicted": "contradiction",
+            "passage_excerpt": "It is he that sitteth upon the circle of the earth, and the inhabitants thereof are as grasshoppers; that stretcheth out the heavens as a curtain, and spreadeth them out as a tent "
+          }
+        ]
+      },
+      "retrieval": {
+        "entailment": {
+          "recall_at_1": 0.890625,
+          "recall_at_10": 0.984375,
+          "mrr": 0.9335747957229614
+        },
+        "contradiction": {
+          "recall_at_1": 0.6953125,
+          "recall_at_10": 0.9296875,
+          "mrr": 0.7749788761138916
+        }
+      }
+    },
+    {
+      "epoch": 2,
+      "general": {
+        "samples": 1000,
+        "accuracy": 0.7950000166893005,
+        "macro_f1": 0.7948288498465171,
+        "per_class_f1": {
+          "entailment": 0.8170731707317073,
+          "neutral": 0.7338345864661654,
+          "contradiction": 0.833578792341679
+        },
+        "confusion": [
+          [
+            268,
+            52,
+            11
+          ],
+          [
+            40,
+            244,
+            44
+          ],
+          [
+            17,
+            41,
+            283
+          ]
+        ],
+        "first_errors": [
+          {
+            "claim": "It's been argued that pro-life posters are seeking to humanize the unborn through these depictions.",
+            "expected": "neutral",
+            "predicted": "contradiction",
+            "passage_excerpt": "Zoom-out vs. zoom- Ever since Roe , pro-life posters and pamphlets have depicted isolated fetuses."
+          },
+          {
+            "claim": "I managed to escape their grasp and ran just outside the bar.",
+            "expected": "contradiction",
+            "predicted": "neutral",
+            "passage_excerpt": "I was pulled into the bar."
+          },
+          {
+            "claim": "The Chinese labor was seen as less costly and more expendable by the Malay ruling class.",
+            "expected": "neutral",
+            "predicted": "contradiction",
+            "passage_excerpt": "The lucrative tin mines of Kuala Lumpur in the State of Selangor, of Sungai Ujong in Negeri Sembilan, and of Larut and Taiping in Perak were run for the Malay rulers by Chinese man"
+          },
+          {
+            "claim": "Even though this book has flaws, I think it's a good thing.",
+            "expected": "entailment",
+            "predicted": "neutral",
+            "passage_excerpt": "My bottom line is that I would recommend the book to students and colleagues and I hope it does well, despite its anti-intellectual p.c."
+          },
+          {
+            "claim": "It's your turn.",
+            "expected": "contradiction",
+            "predicted": "entailment",
+            "passage_excerpt": "Now it's my turn, and even if I'm walking in a dead man's shoes, I can make my way afresh."
+          },
+          {
+            "claim": "I don't like television much, I do like Cheers though.",
+            "expected": "entailment",
+            "predicted": "neutral",
+            "passage_excerpt": "yeah no i don't know if there's any any series that i pay attention to i try to watch Cheers once in a while"
+          },
+          {
+            "claim": "some do not have the hope that common interests will lead us to a consensus.",
+            "expected": "neutral",
+            "predicted": "contradiction",
+            "passage_excerpt": "I hope that our common interests will lead us to a consensus - one that will provide the country with significant benefits."
+          },
+          {
+            "claim": "They wanted to make the site very user friendly.",
+            "expected": "entailment",
+            "predicted": "neutral",
+            "passage_excerpt": "A button on the Chatterbox page will make this easy, so please do join in."
+          },
+          {
+            "claim": "I never had any children with my wife.",
+            "expected": "contradiction",
+            "predicted": "neutral",
+            "passage_excerpt": "yeah well i can't i'll you know i say i can't wait for my kids to grow up but i believe i'm going to miss this age when they're gone"
+          },
+          {
+            "claim": "People simply prefer to be comfortable inside rather than outdoors in the sweltering heat.",
+            "expected": "entailment",
+            "predicted": "neutral",
+            "passage_excerpt": "Porches and stoops, those symbols of a vibrant social life, stopped being used as gathering places for a rather practical reason--air conditioning."
+          },
+          {
+            "claim": "Driving directly to the house was no longer an option with the roadblock.",
+            "expected": "contradiction",
+            "predicted": "neutral",
+            "passage_excerpt": "His plan was to drive straight up to the house."
+          },
+          {
+            "claim": "Marriage is important to society.",
+            "expected": "entailment",
+            "predicted": "neutral",
+            "passage_excerpt": "Marriage is an important institution."
+          }
+        ]
+      },
+      "bible_dev": {
+        "samples": 30,
+        "accuracy": 0.8999999761581421,
+        "macro_f1": 0.8885448916408668,
+        "per_class_f1": {
+          "entailment": 1.0,
+          "neutral": 0.8235294117647058,
+          "contradiction": 0.8421052631578947
+        },
+        "confusion": [
+          [
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            7,
+            2
+          ],
+          [
+            0,
+            1,
+            8
+          ]
+        ],
+        "first_errors": [
+          {
+            "claim": "You should always answer a fool.",
+            "expected": "neutral",
+            "predicted": "contradiction",
+            "passage_excerpt": "Answer not a fool according to his folly, lest thou also be like unto him. Answer a fool according to his folly, lest he be wise in his own conceit."
+          },
+          {
+            "claim": "Serving two masters is easy and encouraged.",
+            "expected": "contradiction",
+            "predicted": "neutral",
+            "passage_excerpt": "No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve God and mammon."
+          },
+          {
+            "claim": "The Earth is flat.",
+            "expected": "neutral",
+            "predicted": "contradiction",
+            "passage_excerpt": "It is he that sitteth upon the circle of the earth, and the inhabitants thereof are as grasshoppers; that stretcheth out the heavens as a curtain, and spreadeth them out as a tent "
+          }
+        ]
+      },
+      "retrieval": {
+        "entailment": {
+          "recall_at_1": 0.8828125,
+          "recall_at_10": 0.984375,
+          "mrr": 0.9265475273132324
+        },
+        "contradiction": {
+          "recall_at_1": 0.71875,
+          "recall_at_10": 0.9375,
+          "mrr": 0.7861036062240601
+        }
+      }
+    }
+  ],
+  "best_epoch": 1,
+  "best_score": 0.8784735389882448,
+  "domain_note": "Curated proposition labels are not independently verified.",
+  "eval_note": "30-case Bible dev set already inspected; not sealed holdout."
+}
